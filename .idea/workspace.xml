@@ -5,53 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c53af7b-5ea7-4d54-93c3-e8bb5c7a6961" name="Default Changelist" comment="mai">
-      <change afterPath="$PROJECT_DIR$/Client/src/main/DBManager/ClientDBManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/DBManager/ServerDBManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/Entity/ServerAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/cinema.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cinema.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/DBManager/ClientDBManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/DBManager/ClientDBManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/DBManager/DBManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/Data/cinema_park (1).sql" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/Data/cinema_park (1).sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/Entity/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/Entity/Cashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/Entity/ServerCashier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/Entity/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/Entity/Checker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/Entity/Cinema_hall.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/Entity/Cinema_hall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/Entity/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/Entity/ServerMovies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/Entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/Entity/ServerPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/Entity/Tickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/Entity/ServerTickets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminAddCashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminAddCashier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminAddChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminAddChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminAddMovies.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminAddMovies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminDeleteEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminDeleteEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminListEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminListEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminListMovies.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminListMovies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminRemoveMovies.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminRemoveMovies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminTickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Admin/AdminTickets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Cashier/CashierMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Cashier/CashierMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Cashier/ShowtTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Cashier/ShowtTicket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Checker/CheckerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Checker/CheckerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/com/company/GUIController/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/company/GUIController/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/DBManager/ServerDBManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/DBManager/ServerDBManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/DBManager/ServerDBManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/Data/cinema_park (1).sql" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/Data/cinema_park (1).sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/Entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/Entity/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/Entity/Cashier.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/Entity/Cashier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/Entity/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/Entity/ServerChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/Entity/Cinema_hall.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/Entity/ServerCinema_hall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/Entity/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/Entity/Movies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/Entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/Entity/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/Entity/Tickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/Entity/Tickets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/ServerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/ServerRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/com/company/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/Data/cinema_park (1).sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/Data/cinema_park (1).sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +45,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Client/src" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Client/src/com/company/Data/mysql-connector-java-8.0.15.jar" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -99,11 +66,27 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.company.server" />
       <recent name="" />
       <recent name="com.company" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Client (1)">
+    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.company.Client" />
+      <module name="cinema" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -238,11 +221,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Server" />
-        <item itemvalue="Application.ClientMain (1)" />
         <item itemvalue="Application.Client (1)" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618562832667</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit">
+      <created>1618564414116</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618564414116</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -280,7 +269,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Main push" />
     <MESSAGE value="Coimmmitt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Coimmmitt" />
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/cinema$Unnamed.ic" NAME="Unnamed Coverage Results" MODIFIED="1618506010500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

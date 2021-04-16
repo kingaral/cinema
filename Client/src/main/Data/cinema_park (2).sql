@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 28 2020 г., 19:06
+-- Время создания: Май 07 2020 г., 23:44
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -48,10 +48,10 @@ INSERT INTO `hall` (`idOfHall`, `occupied`) VALUES
 --
 
 CREATE TABLE `movies` (
+  `cinema_id` int(9) NOT NULL,
   `name` varchar(50) NOT NULL,
   `sheduleOfMovies` varchar(50) NOT NULL,
   `cost` int(9) NOT NULL,
-  `cinema_id` int(9) NOT NULL,
   `idOfHall` int(11) NOT NULL,
   `moviesIdOfUsers` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -60,9 +60,12 @@ CREATE TABLE `movies` (
 -- Дамп данных таблицы `movies`
 --
 
-INSERT INTO `movies` (`name`, `sheduleOfMovies`, `cost`, `cinema_id`, `idOfHall`, `moviesIdOfUsers`) VALUES
-('Platform', '19:00-21:00', 1900, 1, 1, 1),
-('Avengers', '17:00-19:00', 1690, 2, 1, 1);
+INSERT INTO `movies` (`cinema_id`, `name`, `sheduleOfMovies`, `cost`, `idOfHall`, `moviesIdOfUsers`) VALUES
+(1, 'Platform', '19:00-21:00', 1900, 1, 1),
+(2, 'Avengers', '17:00-19:00', 1690, 1, 1),
+(3, 'Rings of Lord', '10:00-12:00', 2000, 1, 1),
+(4, 'DareDevil', '12:10-13:00', 500, 1, 1),
+(11, 'Inception', '14:00-16:00', 1200, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -76,7 +79,7 @@ CREATE TABLE `person` (
   `name` varchar(50) NOT NULL,
   `surname` varchar(50) NOT NULL,
   `position` varchar(50) NOT NULL,
-  `cash` double DEFAULT 0,
+  `cash` int(11) DEFAULT NULL,
   `movies_id` int(9) DEFAULT 1,
   `numberOfTickets` int(9) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -86,9 +89,11 @@ CREATE TABLE `person` (
 --
 
 INSERT INTO `person` (`id`, `password`, `name`, `surname`, `position`, `cash`, `movies_id`, `numberOfTickets`) VALUES
-(1, 'qwerty', 'Mahabbat', 'Khamzina', 'cashier', 0, 1, NULL),
+(1, 'qwerty', 'Mahabbat', 'Khamzina', 'cashier', 3390, 1, NULL),
 (3, 'qwerty', 'Mukagali', 'Tokmurzin', 'admin', NULL, 1, NULL),
-(4, 'qwerty', 'Almas', 'Almasovich', 'checker', NULL, 1, NULL);
+(4, 'qwerty', 'Almas', 'Almasovich', 'checker', NULL, 1, NULL),
+(9, 'qwerty', 'Toma', 'Doma', 'cashier', 0, 1, NULL),
+(10, 'qwerty', 'Ibra', 'Zaza', 'checker', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -101,6 +106,7 @@ CREATE TABLE `tickets` (
   `nameOfMovie` varchar(50) NOT NULL,
   `idOfHall` int(9) NOT NULL,
   `sheduleOfMovies` varchar(50) NOT NULL,
+  `cost` int(9) NOT NULL,
   `ifChecked` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -108,9 +114,15 @@ CREATE TABLE `tickets` (
 -- Дамп данных таблицы `tickets`
 --
 
-INSERT INTO `tickets` (`tickets_id`, `nameOfMovie`, `idOfHall`, `sheduleOfMovies`, `ifChecked`) VALUES
-(1, 'Platform', 1, '19:00-21:00', 0),
-(2, 'Avengers', 1, '17:00-19:00', 0);
+INSERT INTO `tickets` (`tickets_id`, `nameOfMovie`, `idOfHall`, `sheduleOfMovies`, `cost`, `ifChecked`) VALUES
+(1, 'Platform', 1, '19:00-21:00', 0, 1),
+(2, 'Avengers', 1, '17:00-19:00', 0, 1),
+(3, 'Rings of Lord', 1, '10:00-12:00', 2000, 0),
+(4, 'Rings of Lord', 1, '10:00-12:00', 2000, 0),
+(5, 'Avengers', 1, '17:00-19:00', 1690, 0),
+(6, 'DareDevil', 1, '12:10-13:00', 500, 0),
+(7, 'DareDevil', 1, '12:10-13:00', 500, 0),
+(8, 'Inception', 2, '14:00-16:00', 1200, 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -142,19 +154,19 @@ ALTER TABLE `tickets`
 -- AUTO_INCREMENT для таблицы `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `cinema_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cinema_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT для таблицы `person`
 --
 ALTER TABLE `person`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `tickets_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `tickets_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
