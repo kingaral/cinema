@@ -1,8 +1,8 @@
-package com.company.Entity;
+package main.Entity;
 
 import java.io.Serializable;
 
-public class Movies implements Serializable {
+public class ServerMovies implements Serializable {
 
     private Integer cinema_id;
     private String name;
@@ -10,7 +10,7 @@ public class Movies implements Serializable {
     private int cost;
     private int hall_id;
 
-    public Movies(Integer cinema_id, String name, String scheduleOfMovies, int cost, int hall_id) {
+    public ServerMovies(Integer cinema_id, String name, String scheduleOfMovies, int cost, int hall_id) {
         this.cinema_id = cinema_id;
         this.name = name;
         this.scheduleOfMovies = scheduleOfMovies;
@@ -18,7 +18,7 @@ public class Movies implements Serializable {
         this.hall_id = hall_id;
     }
 
-    public Movies() {
+    public ServerMovies() {
     }
 
     public int getHall_id() {

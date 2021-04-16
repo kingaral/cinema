@@ -1,6 +1,6 @@
-package com.company.DBManager;
+package main.DBManager;
 
-import com.company.Entity.*;
+import main.Entity.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -31,7 +31,7 @@ public class ServerDBManagerImpl implements ServerDBManager {
 
     ////////////////////////////////////////////////////////////////////////////////////////
 
-    public Person Login(int person_id, String person_password){
+    public ServerPerson Login(int person_id, String person_password){
         try{
 
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM person WHERE id=? and password=?");
@@ -49,21 +49,21 @@ public class ServerDBManagerImpl implements ServerDBManager {
                 String position = resultSet.getString("position");
 
                 if(position.equals("admin")){
-                    Admin admin = new Admin(id, password, name, surname, position);
+                    ServerAdmin admin = new ServerAdmin(id, password, name, surname, position);
 
                     return admin;
                 }
                 else if(position.equals("cashier")){
                     int cash=resultSet.getInt("cash");
 
-                    Cashier cashier = new Cashier(id, password,  name, surname, position, cash);
+                    ServerCashier cashier = new ServerCashier(id, password,  name, surname, position, cash);
 
                     return cashier;
                 }
                 else if(position.equals("checker")){
 
 
-                    Checker checker=new Checker(id, password, name, surname, position);
+                    ServerChecker checker=new ServerChecker(id, password, name, surname, position);
 
                     return checker;
 
@@ -82,8 +82,8 @@ public class ServerDBManagerImpl implements ServerDBManager {
 
     ///////////////////////////////      MOVIES      ///////////////////////////////////////////////////////////
 
-    public ArrayList<Movies> getMoviesById(){
-        ArrayList<Movies> movies= new ArrayList<>();
+    public ArrayList<ServerMovies> getMoviesById(){
+        ArrayList<ServerMovies> movies= new ArrayList<>();
         int movies_id=1;
         try {
 
@@ -101,7 +101,7 @@ public class ServerDBManagerImpl implements ServerDBManager {
 
                 int cost = resultSet.getInt("cost");
                 int idOfHall = resultSet.getInt("idOfHall");
-                Movies movies1 = new Movies(id,name,sheduleOfMovies,cost,idOfHall);
+                ServerMovies movies1 = new ServerMovies(id,name,sheduleOfMovies,cost,idOfHall);
                 movies.add(movies1);
 
             }
@@ -152,7 +152,7 @@ public class ServerDBManagerImpl implements ServerDBManager {
     }
 
 
-    public void addMovies(Movies movies){
+    public void addMovies(ServerMovies movies){
 
         try {
 
@@ -179,9 +179,9 @@ public class ServerDBManagerImpl implements ServerDBManager {
 
 
 
-    public ArrayList<Person> getUsersData()
+    public ArrayList<ServerPerson> getUsersData()
     {
-        ArrayList<Person> users=new ArrayList<>();
+        ArrayList<ServerPerson> users=new ArrayList<>();
         try {
             PreparedStatement statement= connection.prepareStatement("SELECT * FROM person");
             ResultSet resultSet = statement.executeQuery();
@@ -191,7 +191,7 @@ public class ServerDBManagerImpl implements ServerDBManager {
                 String name = resultSet.getString("name");
                 String surname = resultSet.getString("surname");
                 String position = resultSet.getString("position");
-                Person person=new Person(id, name, surname, position);
+                ServerPerson person=new ServerPerson(id, name, surname, position);
                 if (!position.equals("admin")){
                     users.add(person);
                     System.out.println();
@@ -206,7 +206,7 @@ public class ServerDBManagerImpl implements ServerDBManager {
         return users;
     }
 
-    public void addCashier(Cashier cashier){
+    public void addCashier(ServerCashier cashier){
 
         try {
 
@@ -228,7 +228,7 @@ public class ServerDBManagerImpl implements ServerDBManager {
 
     }
 
-    public void addChecker(Checker checker){
+    public void addChecker(ServerChecker checker){
 
         try {
 
@@ -268,8 +268,8 @@ public class ServerDBManagerImpl implements ServerDBManager {
 
 
 /////////////////////TICKETS//////////////////////////////
-public ArrayList<Tickets> getTickets(){
-    ArrayList<Tickets> tickets= new ArrayList<>();
+public ArrayList<ServerTickets> getTickets(){
+    ArrayList<ServerTickets> tickets= new ArrayList<>();
 
     try {
 
@@ -285,7 +285,7 @@ public ArrayList<Tickets> getTickets(){
             String sheduleOfMovies = resultSet.getString("sheduleOfMovies");
             int cost = resultSet.getInt("cost");
             boolean ifChecked=resultSet.getBoolean("ifChecked");
-            Tickets ticket=new Tickets(id, name, idOfHall, sheduleOfMovies, cost, ifChecked);
+            ServerTickets ticket=new ServerTickets(id, name, idOfHall, sheduleOfMovies, cost, ifChecked);
             tickets.add(ticket);
 
         }
@@ -299,8 +299,8 @@ public ArrayList<Tickets> getTickets(){
 }
 
 
-    public Tickets getTicketsById(int tickets_id){
-       Tickets tickets=new Tickets();
+    public ServerTickets getTicketsById(int tickets_id){
+       ServerTickets tickets=new ServerTickets();
         try {
 
             PreparedStatement statement= connection.prepareStatement("SELECT * FROM tickets WHERE tickets_id=?");
@@ -316,7 +316,7 @@ public ArrayList<Tickets> getTickets(){
                 String sheduleOfMovies = resultSet.getString("sheduleOfMovies");
                 int cost = resultSet.getInt("cost");
                 boolean ifChecked=resultSet.getBoolean("ifChecked");
-                tickets=new Tickets(id, name, idOfHall,sheduleOfMovies,cost,ifChecked);
+                tickets=new ServerTickets(id, name, idOfHall,sheduleOfMovies,cost,ifChecked);
             }
             resultSet.close();
             statement.close();
@@ -343,7 +343,7 @@ public ArrayList<Tickets> getTickets(){
         }
     }
 
-    public void addTicket(Tickets tickets){
+    public void addTicket(ServerTickets tickets){
 
         try {
 

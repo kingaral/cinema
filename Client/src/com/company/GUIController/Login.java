@@ -1,10 +1,10 @@
 package com.company.GUIController;
 
 import com.company.Client;
-import com.company.Entity.Admin;
-import com.company.Entity.Cashier;
-import com.company.Entity.Checker;
-import com.company.Entity.Person;
+import main.Entity.ServerAdmin;
+import main.Entity.ServerCashier;
+import main.Entity.ServerChecker;
+import main.Entity.ServerPerson;
 import com.company.GUIController.Admin.AdminMain;
 import com.company.GUIController.Cashier.CashierMain;
 import com.company.GUIController.Checker.CheckerMain;
@@ -21,7 +21,7 @@ public class Login extends JFrame {
     private JTextField textFieldLogin, textFieldPassword;
     private JButton buttonLogin;
 
-    public static Person PERSON=null;
+    public static ServerPerson PERSON=null;
 
     public Login(){
 
@@ -61,15 +61,15 @@ public class Login extends JFrame {
                 String password = getString();
                 System.out.println(id+" "+password);
 
-                Person person= Client.dbManager.Login(id,password);
+                ServerPerson person= Client.dbManager.Login(id,password);
                 PERSON = person;
                 System.out.println(person.getClass());
-                if(person instanceof Cashier){
+                if(person instanceof ServerCashier){
                     System.out.println("cashier");
                     CashierMain cashierMain=new CashierMain(person);
                     cashierMain.setVisible(true);
                 }
-                else if(person instanceof Admin){
+                else if(person instanceof ServerAdmin){
                     System.out.println("admin");
 
                     setVisible(false);
@@ -77,7 +77,7 @@ public class Login extends JFrame {
                     AdminMain adminMain = new AdminMain();
                     adminMain.setVisible(true);
                    }
-                else if(person instanceof Checker){
+                else if(person instanceof ServerChecker){
                     System.out.println("checker");
                     setVisible(false);
                     CheckerMain checkerMain=new CheckerMain();

@@ -1,23 +1,23 @@
-package com.company.Entity;
+package main.Entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cashier extends Person implements Serializable {
+public class ServerCashier extends ServerPerson implements Serializable {
 
     private String position;
     private int cash;
-    private ArrayList<Movies> movies;
+    private ArrayList<ServerMovies> movies;
 
 
-    public Cashier(Integer id, String password, String name, String surname, String position, int cash) {
+    public ServerCashier(Integer id, String password, String name, String surname, String position, int cash) {
         super(id, password, name, surname);
         this.position = position;
         this.cash = cash;
 
     }
 
-    public Cashier() {
+    public ServerCashier() {
     }
 
     public String getPosition() { return position; }
@@ -28,9 +28,9 @@ public class Cashier extends Person implements Serializable {
 
     public void setCash(int cash) { this.cash = cash; }
 
-    public ArrayList<Movies> getMovies() { return movies; }
+    public ArrayList<ServerMovies> getMovies() { return movies; }
 
-    public void setMovies(ArrayList<Movies> movies) {
+    public void setMovies(ArrayList<ServerMovies> movies) {
         this.movies = movies;
     }
 

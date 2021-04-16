@@ -1,22 +1,22 @@
-package com.company.Entity;
+package main.Entity;
 
 import java.io.Serializable;
 
-public class Person implements Serializable {
+public class ServerPerson implements Serializable {
 
     private Integer id;
     private String password;
     private String name;
     private String surname;
 
-    public Person(Integer id, String password, String name, String surname) {
+    public ServerPerson(Integer id, String password, String name, String surname) {
         this.id = id;
         this.password = password;
         this.name = name;
         this.surname = surname;
     }
 
-    public Person() {
+    public ServerPerson() {
     }
 
     public Integer getId() { return id; }

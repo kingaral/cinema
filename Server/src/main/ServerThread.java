@@ -1,8 +1,8 @@
-package com.company;
+package main;
 
-import com.company.DBManager.ServerDBManager;
-import com.company.DBManager.ServerDBManagerImpl;
-import com.company.Entity.*;
+import main.DBManager.ServerDBManager;
+import main.DBManager.ServerDBManagerImpl;
+import main.Entity.*;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -33,12 +33,12 @@ public class ServerThread extends Thread {
 
                 if(request.getActionName().equals("Login")){
 
-                    Person person = dbManager.Login(Integer.parseInt(request.getFirstArgument()), request.getSecondArgument());
+                    ServerPerson person = dbManager.Login(Integer.parseInt(request.getFirstArgument()), request.getSecondArgument());
                     outputStream.writeObject(person);
                 }
                 else if(request.getActionName().equals("getMoviesById")){
 
-                    ArrayList<Movies> movies=dbManager.getMoviesById();
+                    ArrayList<ServerMovies> movies=dbManager.getMoviesById();
                     outputStream.writeObject(movies);
 
                 }
@@ -52,22 +52,22 @@ public class ServerThread extends Thread {
 
                 }
                 else if(request.getActionName().equals("addMovies")){
-                dbManager.addMovies((Movies)request.getObjectArgument());
+                dbManager.addMovies((ServerMovies)request.getObjectArgument());
 
 
                 }
                 else if(request.getActionName().equals("getUsersData")){
-                    ArrayList<Person> person=dbManager.getUsersData();
+                    ArrayList<ServerPerson> person=dbManager.getUsersData();
                     outputStream.writeObject(person);
 
                 }
                 else if(request.getActionName().equals("addCashier")) {
-                    dbManager.addCashier((Cashier)request.getObjectArgument());
+                    dbManager.addCashier((ServerCashier)request.getObjectArgument());
                 }
 
 
                 else if(request.getActionName().equals("addChecker")) {
-                    dbManager.addChecker((Checker)request.getObjectArgument());
+                    dbManager.addChecker((ServerChecker)request.getObjectArgument());
                 }
 
                 else if(request.getActionName().equals("deleteEmployee")) {
@@ -75,13 +75,13 @@ public class ServerThread extends Thread {
                 }
 
                 else if(request.getActionName().equals("getTickets")) {
-                ArrayList<Tickets> tickets=dbManager.getTickets();
+                ArrayList<ServerTickets> tickets=dbManager.getTickets();
                 outputStream.writeObject(tickets);
                 }
 
 
                 else if(request.getActionName().equals("getTicketsById")) {
-                    Tickets tickets = dbManager.getTicketsById(Integer.parseInt(request.getFirstArgument()));
+                    ServerTickets tickets = dbManager.getTicketsById(Integer.parseInt(request.getFirstArgument()));
                     outputStream.writeObject(tickets);
 
                 }
@@ -94,7 +94,7 @@ public class ServerThread extends Thread {
 
 
                 else if(request.getActionName().equals("addTicket")) {
-                    dbManager.addTicket((Tickets) request.getObjectArgument());
+                    dbManager.addTicket((ServerTickets) request.getObjectArgument());
                 }
 
 

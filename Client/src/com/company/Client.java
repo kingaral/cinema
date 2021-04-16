@@ -1,20 +1,20 @@
 package com.company;
 
-import com.company.DBManager.ServerDBManager;
-import com.company.DBManager.ServerDBManagerImpl;
+import main.DBManager.ClientDBManager;
+import main.DBManager.ClientDBManagerImpl;
 import com.company.GUIController.Login;
 
 import java.net.Socket;
 
 public class Client {
     public static Socket socket;
-    public static ServerDBManager dbManager;
+    public static ClientDBManager dbManager;
 
     public static void main(String[] args) {
 
         try {
             socket = new Socket("127.0.0.1", 2000);
-            dbManager = new ServerDBManagerImpl();
+            dbManager = new ClientDBManagerImpl();
 
             Login login = new Login();
             login.setVisible(true);

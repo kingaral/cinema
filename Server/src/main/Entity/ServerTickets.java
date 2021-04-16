@@ -1,8 +1,8 @@
-package com.company.Entity;
+package main.Entity;
 
 import java.io.Serializable;
 
-public class Tickets implements Serializable {
+public class ServerTickets implements Serializable {
 
     private Integer tickets_id;
     private String nameOfMovie;
@@ -11,7 +11,7 @@ public class Tickets implements Serializable {
     private int cost;
     private boolean ifChecked;
 
-    public Tickets(Integer tickets_id, String nameOfMovie, int idOfHall, String scheduleOfMovies, int cost, boolean ifChecked) {
+    public ServerTickets(Integer tickets_id, String nameOfMovie, int idOfHall, String scheduleOfMovies, int cost, boolean ifChecked) {
         this.tickets_id = tickets_id;
         this.nameOfMovie = nameOfMovie;
         this.idOfHall = idOfHall;
@@ -20,7 +20,7 @@ public class Tickets implements Serializable {
         this.ifChecked = ifChecked;
     }
 
-    public Tickets() {
+    public ServerTickets() {
     }
 
     public int getCost() {

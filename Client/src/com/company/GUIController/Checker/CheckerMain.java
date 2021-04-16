@@ -1,7 +1,7 @@
 package com.company.GUIController.Checker;
 
 import com.company.Client;
-import com.company.Entity.Tickets;
+import main.Entity.ServerTickets;
 import com.company.GUIController.Login;
 
 import javax.swing.*;
@@ -115,7 +115,7 @@ public class CheckerMain extends JFrame {
         Search.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Tickets ticket= Client.dbManager.getTicketsById(Integer.parseInt(idOfTicketEnter.getText()));
+                ServerTickets ticket= Client.dbManager.getTicketsById(Integer.parseInt(idOfTicketEnter.getText()));
                 IdOfTicketEmpty.setText(String.valueOf(ticket.getTickets_id()));
                 NameOfFilmEmpty.setText(ticket.getNameOfMovie());
                 SheduleEmpty.setText(ticket.getScheduleOfMovies());
@@ -170,7 +170,7 @@ public class CheckerMain extends JFrame {
         NotChecked.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Tickets ticket= Client.dbManager.getTicketsById(Integer.parseInt(idOfTicketEnter.getText()));
+                ServerTickets ticket= Client.dbManager.getTicketsById(Integer.parseInt(idOfTicketEnter.getText()));
                 Client.dbManager.change_status_of_ticket(ticket.getTickets_id());
 
                 NotChecked.setVisible(false);

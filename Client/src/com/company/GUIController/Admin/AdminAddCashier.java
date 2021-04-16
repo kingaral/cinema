@@ -1,7 +1,7 @@
 package com.company.GUIController.Admin;
 
 import com.company.Client;
-import com.company.Entity.Cashier;
+import main.Entity.ServerCashier;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -64,7 +64,7 @@ public class AdminAddCashier extends JFrame {
                 String surname=textFieldSurname.getText();
                 String password = "qwerty";
                 String position= "cashier";
-                Cashier cashier=new Cashier(null, password,name, surname,position,0);
+                ServerCashier cashier=new ServerCashier(null, password,name, surname,position,0);
                 Client.dbManager.addCashier(cashier);
                 System.out.println(cashier);
 

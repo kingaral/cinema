@@ -1,9 +1,9 @@
 package com.company.GUIController.Cashier;
 
 import com.company.Client;
-import com.company.Entity.Movies;
-import com.company.Entity.Person;
-import com.company.Entity.Tickets;
+import main.Entity.ServerMovies;
+import main.Entity.ServerPerson;
+import main.Entity.ServerTickets;
 import com.company.GUIController.Login;
 
 import javax.swing.*;
@@ -18,7 +18,7 @@ public class CashierMain extends JFrame {
     JLabel NameOfCenter,BeforeJComboBox;
     JScrollPane scrollPane;
 
-    public CashierMain(Person cashier){
+    public CashierMain(ServerPerson cashier){
         setTitle("Cashier Panel/ Choose option");
         setBounds(800,300,800,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,12 +29,12 @@ public class CashierMain extends JFrame {
         add(NameOfCenter);
 
 
-        ArrayList<Movies> movies= Client.dbManager.getMoviesById();
+        ArrayList<ServerMovies> movies= Client.dbManager.getMoviesById();
         int size=movies.size();
         Object[][] data=new Object[size][];
 
         int i=-1;
-        for(Movies pr: movies){
+        for(ServerMovies pr: movies){
             Object[] row={ pr.getName(), pr.getScheduleOfMovies(), pr.getCost(), pr.getHall_id() };
             data[++i]=row;
         }
@@ -77,14 +77,14 @@ public class CashierMain extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ArrayList<Movies> movies= Client.dbManager.getMoviesById();
+                ArrayList<ServerMovies> movies= Client.dbManager.getMoviesById();
                 String selected1=(String)comboBoxFilmChoice.getSelectedItem();
                 String selected2=(String)comboBoxTimeChoice.getSelectedItem();
-                Tickets tickets=new Tickets();
+                ServerTickets tickets=new ServerTickets();
 
                 for (int j = 0; j <movies.size() ; j++) {
                     if (selected1.equals(movies.get(j).getName()) && selected2.equals(movies.get(j).getScheduleOfMovies())){
-                        tickets=new Tickets(null, movies.get(j).getName(), movies.get(j).getHall_id(),movies.get(j).getScheduleOfMovies(),movies.get(j).getCost(),false);
+                        tickets=new ServerTickets(null, movies.get(j).getName(), movies.get(j).getHall_id(),movies.get(j).getScheduleOfMovies(),movies.get(j).getCost(),false);
                     }
                 }
                 Client.dbManager.addTicket(tickets);

@@ -1,9 +1,9 @@
 package com.company;
 
-import com.company.DBManager.ServerDBManager;
+import main.DBManager.ServerDBManager;
 
 
-public class ClientMain {
+public class Main {
 
   public static ServerDBManager dbManager;
 

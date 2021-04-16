@@ -1,7 +1,7 @@
 package com.company.GUIController.Admin;
 
 import com.company.Client;
-import com.company.Entity.Person;
+import main.Entity.ServerPerson;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -22,12 +22,12 @@ public class AdminDeleteEmployee extends JFrame {
         setLayout(null);
 
 
-        ArrayList<Person> users= Client.dbManager.getUsersData();
+        ArrayList<ServerPerson> users= Client.dbManager.getUsersData();
         int size=users.size();
         String[][] data=new String[size][];
 
         int i=-1;
-        for(Person pr: users){
+        for(ServerPerson pr: users){
             String[] row={pr.getId().toString(), pr.getName(), pr.getSurname()};
             data[++i]=row;
         }

@@ -1,15 +1,15 @@
-package com.company.DBManager;
+package main.DBManager;
 
 import com.company.Client;
-import com.company.Entity.*;
-import com.company.ServerRequest;
+import main.Entity.*;
+import main.ServerRequest;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
 
 import java.util.ArrayList;
-public class ClientDBManagerImpl implements DBManager {
+public class ClientDBManagerImpl implements ClientDBManager {
 
     private Connection connection;
     private ObjectOutputStream outputStream;
@@ -28,14 +28,14 @@ public class ClientDBManagerImpl implements DBManager {
 
     ////////////////////////////////////////////////////////////////////////////////////////
 
-    public Person Login(int person_id, String person_password){
+    public ServerPerson Login(int person_id, String person_password){
 
                        try{
 
                            ServerRequest request = new ServerRequest("Login", null, String.valueOf(person_id), person_password, null);
                            outputStream.writeObject(request);
 
-                           Person person = (Person) inputStream.readObject();
+                           ServerPerson person = (ServerPerson) inputStream.readObject();
                            return person;
 
                        }catch (Exception e){
@@ -46,12 +46,12 @@ public class ClientDBManagerImpl implements DBManager {
 
     ///////////////////////////////      MOVIES      ///////////////////////////////////////////////////////////
 
-    public ArrayList<Movies> getMoviesById(){
+    public ArrayList<ServerMovies> getMoviesById(){
 
         try {
             ServerRequest request = new ServerRequest("getMoviesById", null, null,null, null);
             outputStream.writeObject(request);
-            ArrayList<Movies> movies=(ArrayList<Movies>) inputStream.readObject();
+            ArrayList<ServerMovies> movies=(ArrayList<ServerMovies>) inputStream.readObject();
             return movies;
 
         } catch (Exception e){
@@ -85,7 +85,7 @@ public class ClientDBManagerImpl implements DBManager {
         }
     }
 
-    public void addMovies(Movies movies){
+    public void addMovies(ServerMovies movies){
 
         try {
             ServerRequest request = new ServerRequest("addMovies", movies, null,null, null);
@@ -102,7 +102,7 @@ public class ClientDBManagerImpl implements DBManager {
 
 
 
-    public ArrayList<Person> getUsersData()
+    public ArrayList<ServerPerson> getUsersData()
     {
 
         try {
@@ -110,7 +110,7 @@ public class ClientDBManagerImpl implements DBManager {
             ServerRequest request = new ServerRequest("getUsersData", null, null,null, null);
             outputStream.writeObject(request);
 
-            ArrayList<Person> person=(ArrayList<Person>)inputStream.readObject();
+            ArrayList<ServerPerson> person=(ArrayList<ServerPerson>)inputStream.readObject();
             return person;
 
         } catch (Exception e){
@@ -119,7 +119,7 @@ public class ClientDBManagerImpl implements DBManager {
         return null;
     }
 
-    public void addCashier(Cashier cashier){
+    public void addCashier(ServerCashier cashier){
 
         try {
             ServerRequest request = new ServerRequest("addCashier", cashier, null,null, null);
@@ -131,7 +131,7 @@ public class ClientDBManagerImpl implements DBManager {
     }
 
 
-    public void addChecker(Checker checker){
+    public void addChecker(ServerChecker checker){
 
         try {
             ServerRequest request = new ServerRequest("addChecker", checker, null,null, null);
@@ -158,13 +158,13 @@ public class ClientDBManagerImpl implements DBManager {
 
 
 /////////////////////TICKETS//////////////////////////////
-public ArrayList<Tickets> getTickets(){
+public ArrayList<ServerTickets> getTickets(){
 
     try {
         ServerRequest request = new ServerRequest("getTickets", null, null,null, null);
         outputStream.writeObject(request);
 
-        ArrayList<Tickets> tickets=(ArrayList<Tickets>)inputStream.readObject();
+        ArrayList<ServerTickets> tickets=(ArrayList<ServerTickets>)inputStream.readObject();
         return tickets;
     } catch (Exception e){
         e.printStackTrace();
@@ -173,13 +173,13 @@ public ArrayList<Tickets> getTickets(){
 }
 
 
-    public Tickets getTicketsById(int tickets_id){
+    public ServerTickets getTicketsById(int tickets_id){
 
         try {
             ServerRequest request = new ServerRequest("getTicketsById", null, String.valueOf(tickets_id),null, null);
             outputStream.writeObject(request);
 
-            Tickets tickets = (Tickets) inputStream.readObject();
+            ServerTickets tickets = (ServerTickets) inputStream.readObject();
             return tickets;
 
         } catch (Exception e){
@@ -199,7 +199,7 @@ public ArrayList<Tickets> getTickets(){
         }
     }
 
-    public void addTicket(Tickets tickets){
+    public void addTicket(ServerTickets tickets){
 
         try {
             ServerRequest request = new ServerRequest("addTicket", tickets, null,null, null);

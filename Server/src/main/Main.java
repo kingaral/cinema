@@ -1,8 +1,7 @@
-package com.company;
+package main;
 
-import com.company.DBManager.ServerDBManager;
-import com.company.DBManager.ServerDBManagerImpl;
-
+import main.DBManager.ServerDBManager;
+import main.DBManager.ServerDBManagerImpl;
 
 
 public class Main {

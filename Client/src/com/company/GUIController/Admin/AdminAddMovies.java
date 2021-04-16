@@ -1,7 +1,7 @@
 package com.company.GUIController.Admin;
 
 import com.company.Client;
-import com.company.Entity.Movies;
+import main.Entity.ServerMovies;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -76,7 +76,7 @@ public class AdminAddMovies extends JFrame {
                 int cost=Integer.parseInt(textFieldCost.getText());
                 int hall_id=Integer.parseInt((String)comboBoxHallId.getSelectedItem());
 
-                Movies movies=new Movies(null, name, schedule, cost, hall_id);
+                ServerMovies movies=new ServerMovies(null, name, schedule, cost, hall_id);
                 Client.dbManager.addMovies(movies);
                 textFieldName.setText("");
                 textFieldSchedule.setText("");

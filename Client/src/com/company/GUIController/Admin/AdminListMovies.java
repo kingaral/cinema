@@ -1,7 +1,7 @@
 package com.company.GUIController.Admin;
 
 import com.company.Client;
-import com.company.Entity.Movies;
+import main.Entity.ServerMovies;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -25,12 +25,12 @@ public class AdminListMovies extends JFrame {
         NameOfCenter.setBounds(350,70,100,20);
         add(NameOfCenter);
 
-        ArrayList<Movies> movies= Client.dbManager.getMoviesById();
+        ArrayList<ServerMovies> movies= Client.dbManager.getMoviesById();
         int size=movies.size();
         Object[][] data=new Object[size][];
 
         int i=-1;
-        for(Movies pr: movies){
+        for(ServerMovies pr: movies){
             Object[] row={pr.getCinema_id(), pr.getName(), pr.getScheduleOfMovies(), pr.getCost(), pr.getHall_id() };
             data[++i]=row;
         }

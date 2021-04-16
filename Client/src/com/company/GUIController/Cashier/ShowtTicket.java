@@ -1,7 +1,7 @@
 package com.company.GUIController.Cashier;
 
 import com.company.Client;
-import com.company.Entity.Tickets;
+import main.Entity.ServerTickets;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -11,8 +11,8 @@ public class ShowtTicket extends JFrame {
     JLabel IdOfTicket,NameOfFilm,Cost,IdOfHall,Shedule;
     JLabel IdOfTicketEmpty,NameOfFilmEmpty,CostEmpty,IdOfHallEmpty,SheduleEmpty;
 
-    public ShowtTicket(Tickets tickets){
-        ArrayList<Tickets> tickets1= Client.dbManager.getTickets();
+    public ShowtTicket(ServerTickets tickets){
+        ArrayList<ServerTickets> tickets1= Client.dbManager.getTickets();
         String selected1=tickets.getNameOfMovie();
         String selected2=tickets.getScheduleOfMovies();
          for (int i = 0; i <tickets1.size() ; i++) {

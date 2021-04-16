@@ -1,7 +1,7 @@
 package com.company.GUIController.Admin;
 
 import com.company.Client;
-import com.company.Entity.Checker;
+import main.Entity.ServerChecker;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -62,7 +62,7 @@ public class AdminAddChecker extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String name=textFieldName.getText();
                 String surname=textFieldSurname.getText();
-               Checker checker =new Checker(null, "qwerty", name, surname, "checker");
+               ServerChecker checker =new ServerChecker(null, "qwerty", name, surname, "checker");
                 Client.dbManager.addChecker(checker);
                 System.out.println(checker);
 

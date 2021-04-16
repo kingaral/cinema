@@ -1,8 +1,8 @@
-package com.company.Entity;
+package main.Entity;
 
 import java.io.Serializable;
 
-public class Admin extends Person implements Serializable {
+public class Admin extends ServerPerson implements Serializable {
     private String position;
 
     public Admin(int id, String password, String name, String surname) {

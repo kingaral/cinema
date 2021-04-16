@@ -1,17 +1,17 @@
-package com.company.Entity;
+package main.Entity;
 
 import java.io.Serializable;
 
-public class Cinema_hall implements Serializable {
+public class ServerCinema_hall implements Serializable {
     private int idOfHall;
     private boolean occupied;
 
-    public Cinema_hall(int idOfHall, boolean occupied) {
+    public ServerCinema_hall(int idOfHall, boolean occupied) {
         this.idOfHall = idOfHall;
         this.occupied = occupied;
     }
 
-    public Cinema_hall() {
+    public ServerCinema_hall() {
     }
 
     public int getIdOfHall() { return idOfHall; }

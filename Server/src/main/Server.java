@@ -1,4 +1,4 @@
-package com.company;
+package main;
 
 import java.net.ServerSocket;
 import java.net.Socket;

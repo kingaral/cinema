@@ -1,13 +1,13 @@
-package com.company.Entity;
+package main.Entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Checker extends Person implements Serializable {
+public class Checker extends ServerPerson implements Serializable {
 
     private String position;
     private int numberOfTickets;
-    private ArrayList<Movies> movies;
+    private ArrayList<ServerMovies> movies;
 
     public Checker(Integer id, String password, String name, String surname, String position) {
         super(id, password, name, surname);
@@ -25,9 +25,9 @@ public class Checker extends Person implements Serializable {
 
     public void setNumberOfTickets(int numberOfTickets) { this.numberOfTickets = numberOfTickets; }
 
-    public ArrayList<Movies> getMovies() { return movies; }
+    public ArrayList<ServerMovies> getMovies() { return movies; }
 
-    public void setMovies(ArrayList<Movies> movies) {
+    public void setMovies(ArrayList<ServerMovies> movies) {
         this.movies = movies;
     }
 

@@ -1,7 +1,7 @@
 package com.company.GUIController.Admin;
 
 import com.company.Client;
-import com.company.Entity.Tickets;
+import main.Entity.ServerTickets;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -26,12 +26,12 @@ public class AdminTickets extends JFrame {
             NameOfCenter.setBounds(350,70,100,20);
             add(NameOfCenter);
 
-            ArrayList<Tickets> tickets= Client.dbManager.getTickets();
+            ArrayList<ServerTickets> tickets= Client.dbManager.getTickets();
             int size=tickets.size();
             Object[][] data=new Object[size][];
 
             int i=-1;
-            for(Tickets pr: tickets){
+            for(ServerTickets pr: tickets){
                 Object[] row={pr.getTickets_id(),pr.getNameOfMovie(),pr.getIdOfHall(),pr.getScheduleOfMovies(),pr.getCost(), pr.isIfChecked()};
                 data[++i]=row;
             }
