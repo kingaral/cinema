@@ -21,7 +21,6 @@ public class Client {
 
         } catch (Exception e) {
             System.out.println("Client disconnected");
-//            e.printStackTrace();
         }
     }
 
